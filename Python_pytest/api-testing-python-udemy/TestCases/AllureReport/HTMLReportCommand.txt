@@ -1,0 +1,7 @@
+1. pip install allure-pytest (Alure installation)
+
+2. pytest --alluredir=%path where you want to generate allure report% test.py -v -s
+Eg.pytest --alluredir=%/Users/user/Desktop/APIAutomation/api-testing-python-udemy/TestCases/AllureReport% test_DataDriven_library.py -v -s
+
+3. allure serve %path where allure report generated in json formate%
+Eg. allure serve %/Users/user/Desktop/APIAutomation/api-testing-python-udemy/TestCases/AllureReport% test_DataDriven_library.py

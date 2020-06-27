@@ -1,0 +1,143 @@
+{
+	"info": {
+		"_postman_id": "997bb426-ecf8-4999-a862-5a92b06e0adc",
+		"name": "eRx",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "sent_patient",
+			"item": [
+				{
+					"name": "sent_patienthappyPath",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "78b19ad8-8992-45c3-997a-cac0d5a58287",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Response time is less than 500ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(500);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/xml"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "xml= <?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<RCExtRequest version = \"2.32\">\n   <Caller>\n       <VendorName>wavendor7104</VendorName>\n       <VendorPassword>8lzj79vc</VendorPassword>\n   </Caller>\n   <SystemName>wavendor7104</SystemName>\n   <RcopiaPracticeUsername>we98001</RcopiaPracticeUsername>\n\n   <Request>\n       <Command>send_patient</Command>\n       <PatientList>\n<Patient>\n<ExternalID>paltrowbruce</ExternalID>\n<FirstName>Bruce</FirstName>\n<LastName>Paltrow</LastName>\n<DOB>02/01/1945</DOB>\n<Sex>m</Sex>\n<HomePhone>419-855-3055</HomePhone>\n<Address1>2645 Mulberry Lane</Address1>\n<Address2></Address2>\n<City>Toledo</City>\n<State>OH</State>\n<Zip>43605</Zip>\n</Patient>\n<Patient>\n<ExternalID>whitesidekara</ExternalID>\n<FirstName>Kara</FirstName>\n<LastName>Whiteside</LastName>\n<DOB>10/11/1952</DOB>\n<Sex>f</Sex>\n<HomePhone>330-554-7754</HomePhone>\n<Address1>23230 Seaport</Address1>\n<Address2></Address2>\n<City>Akron</City>\n<State>OH</State>\n<Zip>44306</Zip>\n</Patient>\n</PatientList>\n   </Request>\n</RCExtRequest>"
+						},
+						"url": {
+							"raw": "https://engine201.staging.drfirst.com/servlet/rcopia.servlet.EngineServlet",
+							"protocol": "https",
+							"host": [
+								"engine201",
+								"staging",
+								"drfirst",
+								"com"
+							],
+							"path": [
+								"servlet",
+								"rcopia.servlet.EngineServlet"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "send_allergy",
+			"item": [
+				{
+					"name": "Allergy(send_allergy)_HappyPath",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "edcc1a6b-033e-43ea-9959-aad0dd188ad1",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Response time is less than 16000ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(16000);",
+									"});",
+									"",
+									"var responseInXML = xml2Json(responseBody);",
+									"",
+									"pm.test(\"Validate serverIPAdress\", function () {",
+									"    pm.expect(responseInXML.RCExtResponse.Response.ServerIPAddress).to.be.eql(\"engine201.staging.drfirst.com:80\");",
+									"})",
+									"",
+									"pm.test(\"Validate Status OK\", function () {",
+									"    pm.expect(responseInXML.RCExtResponse.Response.Status).to.be.eql(\"ok\");",
+									"})",
+									"",
+									"pm.test(\"Validate Allergy ExternalIDs\", function () {",
+									"for (let x in responseInXML.RCExtResponse.Request.Request.AllergyList.Allergy){",
+									"    // console.log(x);",
+									"    pm.expect(responseInXML.RCExtResponse.Request.Request.AllergyList.Allergy[x].ExternalID).to.be.eql(responseInXML.RCExtResponse.Response.AllergyList.Allergy[x].ExternalID);",
+									"}",
+									"})",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/xml",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "xml=<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<RCExtRequest version = \"2.32\">\n<Caller>\n<VendorName>wavendor7104</VendorName>\n<VendorPassword>8lzj79vc</VendorPassword>\n</Caller>\n<SystemName>wavendor7104</SystemName>\n<RcopiaPracticeUsername>we98001</RcopiaPracticeUsername>\n<Request>\n<Command>send_allergy</Command>\n<AllergyList>\n\n<!-- Allergy defined by drug NDC id -->\n<Allergy>\n<ExternalID>testax1000</ExternalID>\n<RcopiaID></RcopiaID>\n<Deleted>n</Deleted>\n<Status><Active/></Status>\n<Patient>\n<RcopiaID></RcopiaID>\n<ExternalID>paltrowbruce</ExternalID>\n</Patient>\n<Allergen>\n<Name>aspirin</Name>\n<Drug>\n<RcopiaID></RcopiaID>\n<NDCID>58487000101</NDCID>\n</Drug>\n</Allergen>\n<Reaction>nausea</Reaction>\n<OnsetDate>11/01/2015</OnsetDate>\n</Allergy>\n\n<!-- Allergy defined by allergen name, Rcopia will try to match -->\n<Allergy>\n<ExternalID>testax1001</ExternalID>\n<RcopiaID></RcopiaID>\n<Deleted>n</Deleted>\n<Status><Active/></Status>\n<Patient>\n<RcopiaID></RcopiaID>\n<ExternalID>paltrowbruce</ExternalID>\n</Patient>\n<Allergen>\n<Name>Lisinopril</Name>\n</Allergen>\n<Reaction>rash</Reaction>\n<OnsetDate></OnsetDate>\n</Allergy>\n\n<!-- Allergy defined by Rcopia allergy group id -->\n<Allergy>\n<ExternalID>testax1002</ExternalID>\n<RcopiaID></RcopiaID>\n<Deleted>n</Deleted>\n<Patient>\n<RcopiaID></RcopiaID>\n<ExternalID>paltrowbruce</ExternalID>\n</Patient>\n<Allergen>\n<Name>Glutamic Acid</Name>\n<Group>\n<RcopiaID>620</RcopiaID>\n</Group>\n</Allergen>\n<Reaction>sneezing</Reaction>\n<OnsetDate></OnsetDate>\n</Allergy>\n\n</AllergyList>\n</Request>\n</RCExtRequest>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://engine201.staging.drfirst.com/servlet/rcopia.servlet.EngineServlet",
+							"protocol": "https",
+							"host": [
+								"engine201",
+								"staging",
+								"drfirst",
+								"com"
+							],
+							"path": [
+								"servlet",
+								"rcopia.servlet.EngineServlet"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

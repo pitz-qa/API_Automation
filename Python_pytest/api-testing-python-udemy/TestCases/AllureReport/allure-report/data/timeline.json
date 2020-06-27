@@ -1,0 +1,26 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "name" : "timeline",
+  "children" : [ {
+    "name" : "Piyush-MacBook-Pro.local",
+    "children" : [ {
+      "name" : "77224-MainThread",
+      "children" : [ {
+        "name" : "test_Add_New_StudentData",
+        "uid" : "f0d785bf6713cbe",
+        "parentUid" : "0aa2e411a52559993eedd433b3ab430b",
+        "status" : "passed",
+        "time" : {
+          "start" : 1588696523124,
+          "stop" : 1588696526604,
+          "duration" : 3480
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "0aa2e411a52559993eedd433b3ab430b"
+    } ],
+    "uid" : "9e628930650c8abcf93e9d9957a7f7ad"
+  } ]
+}

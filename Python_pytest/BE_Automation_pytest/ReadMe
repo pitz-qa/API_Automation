@@ -1,0 +1,7 @@
+#---------------------------------
+
+# to run test cases command "python3 -m pytest -v"
+# to run test cases for perticular word run command "python3 -m pytest -k great -v"
+# to run marker code only run command "python3 -m pytest -m others -v"
+
+#---------------------------------

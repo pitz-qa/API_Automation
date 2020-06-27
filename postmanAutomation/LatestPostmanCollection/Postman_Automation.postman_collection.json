@@ -1,0 +1,831 @@
+{
+	"info": {
+		"_postman_id": "5b7fee45-b763-4fe1-ac8d-41a3a9528916",
+		"name": "Postman_Automation",
+		"description": "This is totaly as per counrce",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "VarablesCall",
+			"item": [
+				{
+					"name": "uuidGet",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"postman.setGlobalVariable(\"uuid\", jsonData.uuid);",
+									"tests[\"Status code is 200\"] = responseCode.code === 200;"
+								],
+								"id": "4d134fa8-2972-4ba9-8feb-128bf24cf133"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://httpbin.org/uuid",
+							"protocol": "https",
+							"host": [
+								"httpbin",
+								"org"
+							],
+							"path": [
+								"uuid"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PostExmaple",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;"
+								],
+								"id": "b4af9eee-51c6-4870-bff2-88f0b3bbb570"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\":\"John\",\n\t\"email\":\"john@gmail.com\",\n\t\"id\":\"{{uuid}}\"\n\t\n}"
+						},
+						"url": {
+							"raw": "https://httpbin.org/post",
+							"protocol": "https",
+							"host": [
+								"httpbin",
+								"org"
+							],
+							"path": [
+								"post"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Session2",
+			"item": [
+				{
+					"name": "requestBin",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://eny39bl0d542.x.pipedream.net?foo1=bar1 Bar1&foo2=bar2",
+							"protocol": "https",
+							"host": [
+								"eny39bl0d542",
+								"x",
+								"pipedream",
+								"net"
+							],
+							"query": [
+								{
+									"key": "foo1",
+									"value": "bar1 Bar1"
+								},
+								{
+									"key": "foo2",
+									"value": "bar2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "requestBinWirHeaders",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Do-Not-Track",
+								"value": "1"
+							},
+							{
+								"key": "My-own_Headers",
+								"value": "foo"
+							}
+						],
+						"url": {
+							"raw": "https://eny39bl0d542.x.pipedream.net",
+							"protocol": "https",
+							"host": [
+								"eny39bl0d542",
+								"x",
+								"pipedream",
+								"net"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "requestBinWirHeadersPOSTFromData",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Do-Not-Track",
+								"value": "1"
+							},
+							{
+								"key": "My-own_Headers",
+								"value": "foo"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "fname",
+									"value": "john",
+									"type": "text"
+								},
+								{
+									"key": "lname",
+									"value": "hell",
+									"description": " ",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://eny39bl0d542.x.pipedream.net",
+							"protocol": "https",
+							"host": [
+								"eny39bl0d542",
+								"x",
+								"pipedream",
+								"net"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "requestBinWirHeadersPOSTRaw",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "MyHeader1",
+								"value": "1"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\":\"john\"\t\n}"
+						},
+						"url": {
+							"raw": "https://eny39bl0d542.x.pipedream.net",
+							"protocol": "https",
+							"host": [
+								"eny39bl0d542",
+								"x",
+								"pipedream",
+								"net"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reqbin",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://en1bqzdtxgvdph.x.pipedream.net",
+							"protocol": "https",
+							"host": [
+								"en1bqzdtxgvdph",
+								"x",
+								"pipedream",
+								"net"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "requestBinWirHeadersPOSTBinary",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "MyHeader1",
+								"value": "1"
+							}
+						],
+						"body": {
+							"mode": "file",
+							"file": {
+								"src": ""
+							}
+						},
+						"url": {
+							"raw": "https://eny39bl0d542.x.pipedream.net",
+							"protocol": "https",
+							"host": [
+								"eny39bl0d542",
+								"x",
+								"pipedream",
+								"net"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "requestBinWirHeadersPOSTXEncodedValue",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Do-Not-Track",
+								"value": "1"
+							},
+							{
+								"key": "My-own_Headers",
+								"value": "foo"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "fname",
+									"value": "john hell",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://eny39bl0d542.x.pipedream.net",
+							"protocol": "https",
+							"host": [
+								"eny39bl0d542",
+								"x",
+								"pipedream",
+								"net"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Session3",
+			"item": [
+				{
+					"name": "Trello",
+					"item": [
+						{
+							"name": "createTrelloBoard",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2e65a1c0-1fe3-44ac-812d-26989f7a2969",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"const response = pm.response.json();",
+											"pm.test(\"Validate created board name\", function () {",
+											"    pm.expect(response.name).to.eql(pm.environment.get(\"myBoardName\"));",
+											"    pm.expect(response.closed).to.eql(false);",
+											"});",
+											"",
+											"pm.test(\"Valiate Preference permission Level\", function () {",
+											"    pm.expect(response.prefs.permissionLevel).to.eql(\"private\");",
+											"});",
+											"",
+											"console.log(response); ",
+											"",
+											"pm.test(\"Response time is less than 1000ms\", function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(1000);",
+											"});",
+											"",
+											"pm.globals.set(\"boardID\", response.id);",
+											"",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "43a90640-d862-473c-9a11-acd564236aa7",
+										"exec": [
+											" function getRandomBoradname(){",
+											"     const boardname = \"My New Board Name \"+parseInt(Math.random()*1000);",
+											"     console.log(boardname);",
+											"     return boardname;",
+											" }",
+											" ",
+											" pm.environment.set(\"myBoardName\", getRandomBoradname()); "
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "https://api.trello.com/1/boards/?name={{myBoardName}}&key={{myTrelloKey}}&token={{myTrelloToken}}",
+									"protocol": "https",
+									"host": [
+										"api",
+										"trello",
+										"com"
+									],
+									"path": [
+										"1",
+										"boards",
+										""
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "{{myBoardName}}"
+										},
+										{
+											"key": "key",
+											"value": "{{myTrelloKey}}"
+										},
+										{
+											"key": "token",
+											"value": "{{myTrelloToken}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateBoardByID",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "https://api.trello.com/:apiVer/boards/:id?name=john&laname=hell",
+									"protocol": "https",
+									"host": [
+										"api",
+										"trello",
+										"com"
+									],
+									"path": [
+										":apiVer",
+										"boards",
+										":id"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "john"
+										},
+										{
+											"key": "laname",
+											"value": "hell"
+										}
+									],
+									"variable": [
+										{
+											"key": "apiVer",
+											"value": "1"
+										},
+										{
+											"key": "id",
+											"value": "1234"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getBoards",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/ecmascript",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://api.trello.com/1/boards/:id?key={{myTrelloKey}}&token={{myTrelloToken}}",
+									"protocol": "https",
+									"host": [
+										"api",
+										"trello",
+										"com"
+									],
+									"path": [
+										"1",
+										"boards",
+										":id"
+									],
+									"query": [
+										{
+											"key": "key",
+											"value": "{{myTrelloKey}}"
+										},
+										{
+											"key": "token",
+											"value": "{{myTrelloToken}}"
+										}
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "{{boardID}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "exampleTest",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "756cd32d-0f07-4c06-847f-c35b5b670994",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "example.com",
+							"host": [
+								"example",
+								"com"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Session4",
+			"item": [
+				{
+					"name": "gitHubWithPostman(Credentials)",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "Kapish@06032017",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "pitzqa",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+								"key": "Authorization",
+								"value": "token my_access_token"
+							},
+							{
+								"key": "X-GitHub-OTP",
+								"value": "263541",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api.github.com/user/repos",
+							"protocol": "https",
+							"host": [
+								"api",
+								"github",
+								"com"
+							],
+							"path": [
+								"user",
+								"repos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TriggeredOTPCode",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "Kapish@06032017",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "pitzqa",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+								"key": "Authorization",
+								"value": "token my_access_token"
+							},
+							{
+								"key": "X-GitHub-OTP",
+								"type": "text",
+								"value": "required; SMS"
+							}
+						],
+						"url": {
+							"raw": "https://api.github.com/authorizations",
+							"protocol": "https",
+							"host": [
+								"api",
+								"github",
+								"com"
+							],
+							"path": [
+								"authorizations"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Session10_DataSets",
+			"item": [
+				{
+					"name": "DataSet3RequestCollection",
+					"item": [
+						{
+							"name": "getUUID",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "d245323e-5484-4863-9678-f01a7e80a32d",
+										"exec": [
+											"var jsonData = JSON.parse(responseBody);",
+											"pm.environment.set(\"referenceId\", jsonData.uuid);",
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://httpbin.org/uuid",
+									"protocol": "https",
+									"host": [
+										"httpbin",
+										"org"
+									],
+									"path": [
+										"uuid"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "postCustomer&Product",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "a85cc22b-c1e8-4795-9a75-0df15536d8a8",
+										"exec": [
+											"const response = pm.response.json();",
+											"",
+											"pm.test(\"should contain the reference Id\", function () {",
+											"    pm.expect(response.json.referenceId).to.eql(pm.environment.get(\"referenceId\"));",
+											"});",
+											"",
+											"pm.test(\"should contain the customer Id\", function () {",
+											"    pm.expect(response.json.customerId).to.eql(pm.iterationData.get(\"customerID\"));",
+											"});",
+											"",
+											"pm.test(\"should contain the product Id\", function () {",
+											"    pm.expect(response.json.productId).to.eql(pm.iterationData.get(\"productID\"));",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"referenceId\":\"{{referenceId}}\",\n\t\"customerId\":{{customerID}},\n\t\"productId\":{{productID}}\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://httpbin.org/post",
+									"protocol": "https",
+									"host": [
+										"httpbin",
+										"org"
+									],
+									"path": [
+										"post"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "statusCheck",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "3ac1bd98-292a-4b64-812a-c86fcbb0e1fd",
+										"exec": [
+											"pm.test(\"Validate status \"+pm.iterationData.get(\"expectedStatus\"), function () {",
+											"    pm.response.to.have.status(pm.iterationData.get(\"expectedStatus\"));",
+											"}); "
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://httpbin.org/status/{{status}}",
+									"protocol": "https",
+									"host": [
+										"httpbin",
+										"org"
+									],
+									"path": [
+										"status",
+										"{{status}}"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "DataSetExmple",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "01293b5d-3b38-4c93-9e49-6547ac31c8ac",
+								"exec": [
+									"var companies = pm.environment.get(\"companyies\");",
+									"",
+									"if (!companies){",
+									"    companies = [\"Goooooogle\",\"Yahoo!\",\"Facebook\",\"Amazon\"];",
+									"}",
+									"",
+									"var currentCompany = companies.shift();",
+									"pm.environment.set(\"company\", currentCompany);",
+									"pm.environment.set(\"companyies\", companies);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "c2898cb5-03ca-43f2-8f24-dbe2aa7d2160",
+								"exec": [
+									"var companies = pm.environment.get(\"companyies\");",
+									"",
+									"if (companies && companies.length>0){",
+									"     postman.setNextRequest(\"https://requestb.in/1dcigd51\")",
+									"}",
+									"else{",
+									"    postman.setNextRequest(null)",
+									"}",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"{{company}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://requestb.in/1dcigd51",
+							"protocol": "https",
+							"host": [
+								"requestb",
+								"in"
+							],
+							"path": [
+								"1dcigd51"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

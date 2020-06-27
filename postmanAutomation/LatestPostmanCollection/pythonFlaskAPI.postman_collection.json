@@ -1,0 +1,1399 @@
+{
+	"info": {
+		"_postman_id": "3bd54f84-271b-468b-9030-bb8f691ff4d7",
+		"name": "pythonFlaskAPI",
+		"description": "Creating API by Using Flask+Python3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "RESTful Api",
+			"item": [
+				{
+					"name": "http://127.0.0.1:5000/student/Piyush",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000//student/piyush",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"",
+								"student",
+								"piyush"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "RestAPI_Items&Price",
+			"item": [
+				{
+					"name": "/items",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/items",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"items"
+							]
+						},
+						"description": "Get all items from list"
+					},
+					"response": []
+				},
+				{
+					"name": "/items/<name>",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODc5ODk4NjYsImlhdCI6MTU4Nzk4OTU2NiwibmJmIjoxNTg3OTg5NTY2LCJpZGVudGl0eSI6MX0.ofkyt4fe9WQ9crwrMD9mQMawclSmSwRlYxmOtFu4_6g"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:5000/item/chair",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"item",
+								"chair"
+							]
+						},
+						"description": "Get item from list by name which is unique"
+					},
+					"response": []
+				},
+				{
+					"name": "/items/<name> ",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODc5ODk5NzQsImlhdCI6MTU4Nzk4OTY3NCwibmJmIjoxNTg3OTg5Njc0LCJpZGVudGl0eSI6MX0.KNJ4FOd-jNto0DvFPYQLCkIEsffwi8o8wK3HcThTOy0"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:5000/item/chair",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"item",
+								"chair"
+							]
+						},
+						"description": "Delete item from list by name which is unique"
+					},
+					"response": []
+				},
+				{
+					"name": "/items/<name>",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"price\":99.99\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/item/chair",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"item",
+								"chair"
+							]
+						},
+						"description": "Create item from list by name which is unique and add price"
+					},
+					"response": []
+				},
+				{
+					"name": "/items/<name>",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODc5ODk5NzQsImlhdCI6MTU4Nzk4OTY3NCwibmJmIjoxNTg3OTg5Njc0LCJpZGVudGl0eSI6MX0.KNJ4FOd-jNto0DvFPYQLCkIEsffwi8o8wK3HcThTOy0"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"price\":599.99\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/item/stool",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"item",
+								"stool"
+							]
+						},
+						"description": "Update item from list by name which is unique and update price"
+					},
+					"response": []
+				}
+			],
+			"description": "Get Items list\nCreate Otem price\nGet Item Price\nUpdate Item Price\nDelete Item Price",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "SQL_Lite3 APIs",
+			"item": [
+				{
+					"name": "/items",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/items",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"items"
+							]
+						},
+						"description": "Get all items from list"
+					},
+					"response": []
+				},
+				{
+					"name": "/items/<name>",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODkxOTQyNjMsImlhdCI6MTU4OTE5Mzk2MywibmJmIjoxNTg5MTkzOTYzLCJpZGVudGl0eSI6MX0.hdFfCGKvhZZ3898BI0SVwm4yP3fcDOjRpOO1plQKI9w"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:5000/item/chair",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"item",
+								"chair"
+							]
+						},
+						"description": "Get item from list by name which is unique"
+					},
+					"response": []
+				},
+				{
+					"name": "/items/<name> ",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODgwODY4MDksImlhdCI6MTU4ODA4NjUwOSwibmJmIjoxNTg4MDg2NTA5LCJpZGVudGl0eSI6MX0.OSSyP0P9UrFUHzcYfTdiWNQDOr7u9Nw39P0KxdJym5Y"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:5000/item/chair",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"item",
+								"chair"
+							]
+						},
+						"description": "Delete item from list by name which is unique"
+					},
+					"response": []
+				},
+				{
+					"name": "/items/<name>",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"price\":199.99\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/item/chair",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"item",
+								"chair"
+							]
+						},
+						"description": "Create item from list by name which is unique and add price"
+					},
+					"response": []
+				},
+				{
+					"name": "/items/<name>",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODkxOTU0OTgsImlhdCI6MTU4OTE5NTE5OCwibmJmIjoxNTg5MTk1MTk4LCJpZGVudGl0eSI6MX0.GHjiNlWcRe0hA-Ip4eIXBOGGa3XU7aTrilhg45tmH7I"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"price\":999.99\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/item/chair",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"item",
+								"chair"
+							]
+						},
+						"description": "Update item from list by name which is unique and update price"
+					},
+					"response": []
+				},
+				{
+					"name": "/auth",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\":\"jose\",\n\t\"password\":\"asdf\"\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/auth",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\":\"jose\",\n\t\"password\":\"asdf\"\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Get Items list\nCreate Otem price\nGet Item Price\nUpdate Item Price\nDelete Item Price",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Flask-SQL-Alcemy",
+			"item": [
+				{
+					"name": "Store",
+					"item": [
+						{
+							"name": "/store/<name>",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "JWT {{jwt_token}}"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/store/TABLE",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"store",
+										"TABLE"
+									]
+								},
+								"description": "Get store from list by name which is unique"
+							},
+							"response": []
+						},
+						{
+							"name": "/store",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "JWT {{jwt_token}}"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/stores",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"stores"
+									]
+								},
+								"description": "Get stores"
+							},
+							"response": []
+						},
+						{
+							"name": "/store/<name>",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "JWT {{jwt_token}}"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/store/chair",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"store",
+										"chair"
+									]
+								},
+								"description": "Delete store from list by name which is unique"
+							},
+							"response": []
+						},
+						{
+							"name": "/store/<name>",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "JWT {{jwt_token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{url}}/store/TABLE",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"store",
+										"TABLE"
+									]
+								},
+								"description": "Create store by name which is unique"
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Items",
+					"item": [
+						{
+							"name": "/items",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"Response time is less than 200ms\"] = responseTime < 200;",
+											"",
+											"tests[\"Status code is 200\"] = responseCode.code === 200;"
+										],
+										"id": "e6a4a4cb-5ad9-4559-8b27-0fae822dfbf4"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/items",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"items"
+									]
+								},
+								"description": "Get all items from list"
+							},
+							"response": []
+						},
+						{
+							"name": "/items/<name>",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "JWT {{jwt_token}}"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/item/table",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"item",
+										"table"
+									]
+								},
+								"description": "Get item from list by name which is unique"
+							},
+							"response": []
+						},
+						{
+							"name": "/items/<name> ",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODgwODY4MDksImlhdCI6MTU4ODA4NjUwOSwibmJmIjoxNTg4MDg2NTA5LCJpZGVudGl0eSI6MX0.OSSyP0P9UrFUHzcYfTdiWNQDOr7u9Nw39P0KxdJym5Y"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/item/chair",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"item",
+										"chair"
+									]
+								},
+								"description": "Delete item from list by name which is unique"
+							},
+							"response": []
+						},
+						{
+							"name": "/items/<name>",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"Response time is less than 200ms\"] = responseTime < 200;",
+											"",
+											"tests[\"Status code is 200\"] = responseCode.code === 200;"
+										],
+										"id": "73244ba5-2e41-4494-a7e3-4e5082c4ffe6"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"price\":199.99,\n\t\"store_id\": 2\n}"
+								},
+								"url": {
+									"raw": "{{url}}/item/table",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"item",
+										"table"
+									]
+								},
+								"description": "Create item from list by name which is unique and add price"
+							},
+							"response": []
+						},
+						{
+							"name": "/items/<name>",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "JWT {{jwt_token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"price\":999.99,\n\t\"store_id\":1\n}"
+								},
+								"url": {
+									"raw": "{{url}}/item/chair",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"item",
+										"chair"
+									]
+								},
+								"description": "Update item from list by name which is unique and update price"
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "/auth",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"tests[\"Access token is not empty\"] = jsonData.access_token !== undefined;",
+									"",
+									"",
+									"postman.setGlobalVariable(\"jwt_token\", jsonData.access_token);"
+								],
+								"id": "594dde51-496c-4689-a35c-8557d95fbf03"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\":\"jose\",\n\t\"password\":\"asdf\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/auth",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\":\"jose\",\n\t\"password\":\"asdf\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Get Items list\nCreate Otem price\nGet Item Price\nUpdate Item Price\nDelete Item Price",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "FlaskAPISample",
+			"item": [
+				{
+					"name": "store",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/store",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"store"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "store",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Another Store\"\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/store",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"store"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "store/<name>",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/store/My wonderful store",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"store",
+								"My wonderful store"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "store/<name>/item",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/store/My wonderful store/item",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"store",
+								"My wonderful store",
+								"item"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "store/<name>/item",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\":\"Another item\",\n\t\"price\": 10.99\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/store/My wonderful store/item",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"store",
+								"My wonderful store",
+								"item"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "jwt_APIs",
+			"item": [
+				{
+					"name": "/auth",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\":\"bob\",\n\t\"password\":\"asdf\"\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/auth",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"auth"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "REST_APIs_with JWT tocken",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "JWTExtended&TokenRefresh",
+			"item": [
+				{
+					"name": "users copy",
+					"item": [
+						{
+							"name": "register a new user",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"username\": \"jose\",\n\t\"password\": \"1234\"\n}"
+								},
+								"url": {
+									"raw": "{{server_address}}/register",
+									"host": [
+										"{{server_address}}"
+									],
+									"path": [
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get user by id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server_address}}/user/1",
+									"host": [
+										"{{server_address}}"
+									],
+									"path": [
+										"user",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete user by id",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"username\": \"jose\",\n\t\"password\": \"1234\"\n}"
+								},
+								"url": {
+									"raw": "{{server_address}}/user/1",
+									"host": [
+										"{{server_address}}"
+									],
+									"path": [
+										"user",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "login",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"var jsonData = pm.response.json();",
+											"pm.test(\"access_token not empty\", function () {",
+											"    pm.expect(jsonData.access_token).not.eql(undefined);",
+											"});",
+											"",
+											"pm.test(\"refresh token not empty\", function () {",
+											"    pm.expect(jsonData.refresh_token).not.eql(undefined);",
+											"});",
+											"// set access token as environement variable",
+											"if (jsonData.access_token !== undefined) {",
+											"    postman.setEnvironmentVariable(\"access_token\", jsonData.access_token);",
+											"} else {",
+											"    postman.setEnvironmentVariable(\"access_token\", null);",
+											"}",
+											"// set refresh token as environement variable",
+											"if (jsonData.refresh_token !== undefined) {",
+											"    postman.setEnvironmentVariable(\"refresh_token\", jsonData.refresh_token);",
+											"} else {",
+											"    postman.setEnvironmentVariable(\"refresh_token\", null);",
+											"}"
+										],
+										"id": "d2b4cd4a-4a9f-4f62-8da7-e3ec1d8b0fb4"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\" : \"jose\",\n  \"password\" : \"1234\"\n}"
+								},
+								"url": {
+									"raw": "{{server_address}}/login",
+									"host": [
+										"{{server_address}}"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "logout",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{access_token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{server_address}}/logout",
+									"host": [
+										"{{server_address}}"
+									],
+									"path": [
+										"logout"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "refresh token",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"var jsonData = pm.response.json();",
+											"pm.test(\"access_token not empty\", function () {",
+											"    pm.expect(jsonData.access_token).not.eql(undefined);",
+											"});",
+											"// set access token as environement variable",
+											"if (jsonData.access_token !== undefined) {",
+											"    postman.setEnvironmentVariable(\"access_token\", jsonData.access_token);",
+											"} else {",
+											"    postman.setEnvironmentVariable(\"access_token\", null);",
+											"}"
+										],
+										"id": "5d4ce0ed-efd6-4cc3-8e36-9c22c7edffee"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{refresh_token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{local_flask}}/refresh",
+									"host": [
+										"{{local_flask}}"
+									],
+									"path": [
+										"refresh"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "items copy",
+					"item": [
+						{
+							"name": "get item/name",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{access_token}}"
+									}
+								],
+								"url": {
+									"raw": "{{local_flask}}/item/chair",
+									"host": [
+										"{{local_flask}}"
+									],
+									"path": [
+										"item",
+										"chair"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "post item/name",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{access_token}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"price\": 12.99,\n  \"store_id\": 1\n}"
+								},
+								"url": {
+									"raw": "{{local_flask}}/item/chair",
+									"host": [
+										"{{local_flask}}"
+									],
+									"path": [
+										"item",
+										"chair"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "put item/name",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{access_token}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"price\": 12.99,\n  \"store_id\": 1\n}"
+								},
+								"url": {
+									"raw": "{{local_flask}}/item/chair",
+									"host": [
+										"{{local_flask}}"
+									],
+									"path": [
+										"item",
+										"chair"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete item by name",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{access_token}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{local_flask}}/item/chair",
+									"host": [
+										"{{local_flask}}"
+									],
+									"path": [
+										"item",
+										"chair"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get all items",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{access_token}}"
+									}
+								],
+								"url": {
+									"raw": "{{local_flask}}/items",
+									"host": [
+										"{{local_flask}}"
+									],
+									"path": [
+										"items"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get all items without JWT",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{local_flask}}/items",
+									"host": [
+										"{{local_flask}}"
+									],
+									"path": [
+										"items"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "stores copy",
+					"item": [
+						{
+							"name": "create a new store",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{server_address}}/store/My Wonderful Store",
+									"host": [
+										"{{server_address}}"
+									],
+									"path": [
+										"store",
+										"My Wonderful Store"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get store by name",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server_address}}/store/My Wonderful Store",
+									"host": [
+										"{{server_address}}"
+									],
+									"path": [
+										"store",
+										"My Wonderful Store"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete a new store by name",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{server_address}}/store/My Wonderful Store",
+									"host": [
+										"{{server_address}}"
+									],
+									"path": [
+										"store",
+										"My Wonderful Store"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get all stores",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server_address}}/stores",
+									"host": [
+										"{{server_address}}"
+									],
+									"path": [
+										"stores"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

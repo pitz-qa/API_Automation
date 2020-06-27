@@ -1,0 +1,53 @@
+{
+  "uid" : "f0d785bf6713cbe",
+  "name" : "test_Add_New_StudentData",
+  "fullName" : "DataDriven.test_DataDriven_library#test_Add_New_StudentData",
+  "historyId" : "5b91234148a0bb662dfa6473d0e29ba8",
+  "time" : {
+    "start" : 1588696523124,
+    "stop" : 1588696526604,
+    "duration" : 3480
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "DataDriven"
+  }, {
+    "name" : "suite",
+    "value" : "test_DataDriven_library"
+  }, {
+    "name" : "host",
+    "value" : "Piyush-MacBook-Pro.local"
+  }, {
+    "name" : "thread",
+    "value" : "77224-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "DataDriven.test_DataDriven_library"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "f0d785bf6713cbe.json",
+  "parameterValues" : [ ]
+}
